@@ -1,8 +1,11 @@
+using _Project.Script.AbilitySystem;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamagable
 {
     public int health = 20;
+
+    public AbilityTargeting TargetType { get; } = AbilityTargeting.Hostile;
 
     public void TakeDamage(int amount)
     {

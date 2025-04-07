@@ -1,6 +1,7 @@
+using _Project.Script.AbilitySystem;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IDamagable
 {
     public int maxHealth = 5;
     private int currentHealth;
@@ -11,6 +12,8 @@ public class Health : MonoBehaviour
     {
         currentHealth = maxHealth;
     }
+
+    public AbilityTargeting TargetType { get; } = AbilityTargeting.Self;
 
     public void TakeDamage(int amount)
     {

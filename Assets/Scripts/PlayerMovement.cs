@@ -1,3 +1,4 @@
+using _Project.Script.AbilitySystem;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
