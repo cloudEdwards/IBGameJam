@@ -31,5 +31,14 @@ public class PlayerMovement : MonoBehaviour
 
         // Move the player using CharacterController for no friction/stickiness
         controller.Move(velocity * Time.deltaTime);
+
+        // flip sprite depending on travel direction
+        if (h > .1f) {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+
+        if (h < -.1f) {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 }
