@@ -16,13 +16,7 @@ public class Bullet : MonoBehaviour
 
     public void Initialize(Vector3 direction)
     {
-        Debug.Log("direction.normalized * speed");
-        Debug.Log(direction.normalized * speed);
-        Debug.Log("rb.velocity");
-        Debug.Log(rb.linearVelocity);
         rb.AddForce(direction.normalized * speed, ForceMode.Impulse);
-        Debug.Log("rb.velocity after");
-        Debug.Log(rb.linearVelocity);
         Destroy(gameObject, lifeTime);
     }
 
