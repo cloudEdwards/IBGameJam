@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    public GameObject weaponSystem;
     public Transform firePoint;   // Where the bullet spawns
     public float fireRate = 0.2f;
 
@@ -37,8 +37,8 @@ public class PlayerShooting : MonoBehaviour
             // Rotate bullet to face the direction
             Quaternion rotation = Quaternion.LookRotation(snappedDirection, Vector3.up);
 
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, rotation);
-            bullet.GetComponent<Bullet>().Initialize(direction);
+            // fire attacked weapon
+            weaponSystem.GetComponent<Weapon>().FireWeapon(direction, firePoint, rotation);
         }
     }
 

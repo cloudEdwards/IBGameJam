@@ -16,11 +16,7 @@ public class Bullet : MonoBehaviour
 
     public void Initialize(Vector3 direction)
     {
-        Debug.Log("rb.velocity");
-        Debug.Log(rb.linearVelocity);
-        rb.AddForce(direction.normalized * speed, ForceMode.VelocityChange);
-        Debug.Log("rb.velocity after");
-        Debug.Log(rb.linearVelocity);
+        rb.AddForce(direction.normalized * speed, ForceMode.Impulse);
         Destroy(gameObject, lifeTime);
     }
 
@@ -33,6 +29,9 @@ public class Bullet : MonoBehaviour
                 enemy.TakeDamage(damage);
         }
 
-        Destroy(gameObject);
+        if (! other.gameObject.CompareTag("Player")) {
+            Destroy(gameObject);
+        }
+        
     }
 }
