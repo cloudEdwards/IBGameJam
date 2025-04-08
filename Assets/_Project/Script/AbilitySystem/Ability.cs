@@ -95,12 +95,27 @@ namespace _Project.Script.AbilitySystem
         public static implicit operator kfloat(float value) => new kfloat(value);
         public static implicit operator float(kfloat kf) => kf.Value;
     }
-    public class EntityStats
+
+    public interface IStat
+    {
+        public EnemyStat Stat { get; }
+    }
+    
+    [Serializable]
+    public class EnemyStat
     {
         public kfloat Speed;
         public kfloat MaxHealth;
         public kfloat BaseDamage;
         public kfloat BaseDefense;
+
+        public EnemyStat(float speed, float maxHealth, float baseDamage, float baseDefense)
+        {
+            Speed = speed;
+            MaxHealth = maxHealth;
+            BaseDamage = baseDamage;
+            BaseDamage = baseDefense;
+        }
     }
     
     public interface IAbility
