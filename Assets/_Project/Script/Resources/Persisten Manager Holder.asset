@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7218ab7d94254ef593ea6efb576f6669, type: 3}
+  m_Name: Persisten Manager Holder
+  m_EditorClassIdentifier: 
+  damageTextManager: {fileID: 11400000, guid: ef92bf9742e71234faab6a3f9478b6a6, type: 2}
+  soundFXManager: {fileID: 11400000, guid: e1d6c292336acb34791daf5f2e9f4b66, type: 2}

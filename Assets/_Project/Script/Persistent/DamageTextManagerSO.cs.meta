@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 26dd028b52a14aeba82a7099e9a30683
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - DamagePopUpPrefab: {fileID: 726519387603115104, guid: dff27e16b3ace934d9355eb7db43a2b7, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
