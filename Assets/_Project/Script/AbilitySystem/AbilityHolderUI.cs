@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using _Project.Script.AbilitySystem._New;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,22 +11,28 @@ namespace _Project.Script.AbilitySystem
         [SerializeField] private Image _skilLFillImage;
         [SerializeField] private Image _abilityIcon;
         [SerializeField] private TextMeshProUGUI _cooldownText;
+
+        [SerializeField] private AbilityBaseSO _abilityBaseSo;
         
-        [Header("Ability Settings")]
-        [SerializeField] private Ability _ability;
+        private Ability _ability;
 
         public Ability GetAbility => _ability;
         
-        public void Bind(Ability ability)
+        public void Bind(AbilityBaseSO ability)
         {
-            _ability = ability;
-            _abilityIcon.sprite = ability.Icon;
+            _ability = new Ability(ability);
+            _abilityIcon.sprite = ability.abilityIcon;
+            _abilityIcon.enabled = true;
         }
 
         private void Start()
         {
             _cooldownText.text = "";
             _skilLFillImage.enabled = false;
+            _abilityIcon.enabled = false;
+            
+            if(_abilityBaseSo != null)
+                Bind(_abilityBaseSo);
         }
 
         private void Update()
@@ -49,6 +57,7 @@ namespace _Project.Script.AbilitySystem
         {
             _ability = null;
             _abilityIcon.sprite = null;
+            _abilityIcon.enabled = false;
         }
     }
 }

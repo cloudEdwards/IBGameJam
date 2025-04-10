@@ -13,7 +13,7 @@ namespace _Project.Script.Persistent
             {
                 if (instance == null)
                 {
-                    instance = Resources.Load<PersistentManagerHolderSO>("Persisten Manager Holder");
+                    instance = Resources.Load<PersistentManagerHolderSO>("PersistentHolder/Persisten Manager Holder");
                 }
 
                 return instance;

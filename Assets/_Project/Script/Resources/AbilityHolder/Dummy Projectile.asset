@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f8b667aa4f0af40aee0afa0700c0f6, type: 3}
+  m_Name: Dummy Projectile
+  m_EditorClassIdentifier: 
+  abilityName: Dummy
+  description: 
+  abilityIcon: {fileID: -8165945124525705411, guid: e7ee907d5b8f7462d937e97aad5b9a85, type: 3}
+  cooldown: 0.5
+  abilityInputType: 1
+  canMoveWhileCharging: 0
+  hasMaxDuration: 1
+  maxHoldDuration: 1
+  maxPressCount: 5
+  durationBetweenClicks: 0.1
+  modifiersOnTargetHit:
+  - BaseValue: 0
+    ModifierType: 1
+    StatType: 0
+    HasDuration: 1
+    Duration: 0.5
+  modifiersOnCaster: []
+  projectileType: 2
+  abilityTarget: 4
+  lifeTime: 2
+  hitRadius: 0.5
+  speed: 20
+  damage: 55
+  prefab: {fileID: 256177488477176731, guid: 314d3f52d2362ac45a909de595d5ad56, type: 3}

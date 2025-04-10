@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3769fef1fec64bba80ad95d316a15453, type: 3}
+  m_Name: Dummy AOE
+  m_EditorClassIdentifier: 
+  abilityName: Dummy AOE
+  description: 
+  abilityIcon: {fileID: -2107702684177744158, guid: 31fea7ab5e9b9430a8f5a830ab01c45f, type: 3}
+  cooldown: 0.2
+  abilityInputType: 0
+  canMoveWhileCharging: 1
+  hasMaxDuration: 1
+  maxHoldDuration: 2
+  maxPressCount: 2
+  durationBetweenClicks: 0
+  modifiersOnTargetHit:
+  - BaseValue: 0.5
+    ModifierType: 1
+    StatType: 0
+    HasDuration: 1
+    Duration: 0.2
+  modifiersOnCaster: []
+  abilityTarget: 4
+  damageApplicationType: 1
+  damageAmount: 10
+  radius: 1
+  duration: 5
+  tickRate: 0.2
+  maxDistance: 9
+  prefab: {fileID: 2086615456433168610, guid: 4e6fde25a97cca14eb38dabd5c66f268, type: 3}

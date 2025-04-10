@@ -13,7 +13,9 @@ namespace _Project.Script.Persistent
         {
             var damageObj = Instantiate(_damagePopUpPrefab, position, quaternion.identity);
             DamageTextPopup damageText = damageObj.GetComponent<DamageTextPopup>();
-            damageText.Initialize(damageAmount.ToString("N0"), Color.white, 1);
+
+            string damageTextValue = damageAmount < 1 ? damageAmount.ToString("F1") : damageAmount.ToString("N0");
+            damageText.Initialize(damageTextValue, Color.white, 1f);
         }
     }
 }

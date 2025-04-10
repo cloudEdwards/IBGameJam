@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using _Project.Script.AbilitySystem._New;
+using _Project.Script.AbilitySystem.Dudduruu;
 using DG.Tweening;
 using UnityEngine;
 
@@ -6,9 +8,8 @@ namespace _Project.Script.AbilitySystem
 {
     public class AbilityManagerUI : MonoBehaviour
     {
-        
-        
-        [Header("Ability Settings")]
+        [Header("Ability Settings")] 
+        public BaseUnit Caster;
         public AbilityHolderUI PrimarySkill;
 
         [Header("Page 1")] 
@@ -104,18 +105,14 @@ namespace _Project.Script.AbilitySystem
         {
             Ability ability = skillUI.GetAbility;
             if (ability == null) return;
-            if (!ability.enabled) return;
             if (!ability.CanUse()) return;
+
             
-            if (Input.GetKeyDown(keyCode))
-                ability.OnButtonDown();
-            else if (Input.GetKey(keyCode))
-                ability.OnButtonHeld();
-            else if (Input.GetKeyUp(keyCode))
-                ability.OnButtonUp();
+            ability.TryUse(Caster, Input.GetKey(keyCode));
+            return;
         }
 
-        public void AssignAbility(int index, Ability ability)
+        public void AssignAbility(int index, AbilityBaseSO ability)
         {
             indexer[index].Bind(ability);
         }

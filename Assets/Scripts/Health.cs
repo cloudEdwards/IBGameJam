@@ -15,9 +15,9 @@ public class Health : MonoBehaviour, IDamagable
 
     public AbilityTargeting TargetType { get; } = AbilityTargeting.Self;
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
-        currentHealth -= amount;
+        currentHealth -= (int)amount;
         Debug.Log($"{gameObject.name} took {amount} damage. Remaining: {currentHealth}");
 
         if (currentHealth <= 0)

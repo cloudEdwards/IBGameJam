@@ -7,9 +7,9 @@ public class Enemy : MonoBehaviour, IDamagable
 
     public AbilityTargeting TargetType { get; } = AbilityTargeting.Hostile;
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
-        health -= amount;
+        health -= (int)amount;
         Debug.Log("Enemy took damage! Remaining health: " + health);
 
         if (health <= 0)

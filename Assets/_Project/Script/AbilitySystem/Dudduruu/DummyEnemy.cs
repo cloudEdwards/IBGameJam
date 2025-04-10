@@ -6,18 +6,43 @@ namespace _Project.Script.AbilitySystem.Dudduruu
 {
     public class DummyEnemy : BaseUnit
     {
+        private float timer;
+        private int multip = 1;
+        
         public override void OnAwake()
         {
             base.OnAwake();
-            TargetType = AbilityTargeting.Hostile;
-        }
-
-        public override void TakeDamage(int damageAmount)
-        {
-            base.TakeDamage(damageAmount);
-            Debug.Log(damageAmount);
+            targetType = AbilityTargeting.Hostile;
         }
         
+        public override Vector3 GetMousePoint()
+        {
+            return transform.position + transform.forward;
+        }
+
+        private void Update()
+        {
+            timer += Time.deltaTime;
+            if (timer >= 5)
+            {
+                multip *= -1;
+                timer = 0;
+            }
+
+            currentHealth = CurrentHealth;
+            transform.position += UnitStats.Speed * multip * transform.right * Time.deltaTime;
+        }
+
+        public override Vector3 GetDirection()
+        {
+            return transform.forward;
+        }
+
+        public override BaseUnit GetSelectedTarget()
+        {
+            return FindFirstObjectByType<PlayerUnit>();
+        }
+
         [Button]
         public void GetHit()
         {
